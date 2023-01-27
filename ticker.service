@@ -1,0 +1,12 @@
+[Unit]
+Description=Sport Ticker
+After=multi-user.target
+ 
+[Service]
+Type=simple
+ExecStart=/home/pi/youminds-sportticker/tickerloop.sh
+Restart=on-abort
+ 
+[Install]
+WantedBy=multi-user.target
+
