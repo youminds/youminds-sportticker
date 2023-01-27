@@ -1,8 +1,9 @@
 #!/bin/bash
 
+MYID=$(cat ../fdid)
 
 # Receive Matches
-MATJSON=$(curl -XGET -H "X-Auth-Token: <YOUR FOOTBALL DATA ID>" https://api.football-data.org/v4/competitions/$1/matches)
+MATJSON=$(curl -XGET -H "X-Auth-Token: $MYID" https://api.football-data.org/v4/competitions/$1/matches)
 
 # Parse current match day
 CMD=$(echo "$MATJSON" | jq ".matches[0].season.currentMatchday")
@@ -23,7 +24,7 @@ if [[ $RESULTS == "" ]] ; then
 
 		# No results
 		# Receive standings instead
-		STDJSON=$(curl -XGET -H "X-Auth-Token: <YOUR FOOTBALL DATA ID>" https://api.football-data.org/v4/competitions/$1/standings)
+		STDJSON=$(curl -XGET -H "X-Auth-Token: $MYID" https://api.football-data.org/v4/competitions/$1/standings)
 
 		# Parse standings, mind groups, set text block delimiter ; before group
 		STANDINGS=$(echo "$STDJSON" | jq -r --argjson CMD $CMD '[.standings[]|select(.type=="TOTAL")|[.group,[.table[]|"\(.position). \(.team.shortName)"]]|(if (.[0] | length) > 6 then ";Group \(.[0][6:]):" else ";" end),"\(.[1][])"]|join(" ")')
