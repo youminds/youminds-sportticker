@@ -34,13 +34,13 @@ if [[ $RESULTS == "" ]] ; then
 
 	else
 
-		TXT=$2" vom "$CMD". Game day:;"$RESULTS
+		TXT=$2" vom "$CMD". Gameday:;"$RESULTS
 
 	fi
 
 else
 
-	TXT=$2" "$CMD". Games today:;"$RESULTS
+	TXT=$2" "$CMD". Gameday today:;"$RESULTS
 
 fi
 
