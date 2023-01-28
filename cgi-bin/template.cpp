@@ -5,6 +5,31 @@
 #include <regex>
 #include <sstream>
 
+
+enum LeagueMode
+{
+	Full,
+	Gamedayonly,
+	Gamedayandstandings
+};
+
+class LeagueInfo
+{
+};
+
+class LeagueConf
+{
+public:
+	std::string Name;
+	bool Active;
+
+	int Speed;
+	std::string Color;
+	std::string Id;
+	LeagueMode Mode;
+};
+
+
 std::string GetLeageItem(
 	std::string league,
 	std::string name,
@@ -35,6 +60,9 @@ std::string GetLeageItem(
 int main()
 {
 	std::string squery = getenv("QUERY_STRING");
+
+	if ( squery.length() == 0 )
+		squery = "main";
 
 	std::string templatefile = squery + ".html";
 

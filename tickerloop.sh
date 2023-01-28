@@ -15,7 +15,7 @@ echo $HN
 echo $IPA
 
 # Intro einmal scrollen
-bash scrollmessage.sh "Welcome to YouMinds  Sportticker, at -> http://$HN or http://$IPA" 1 999999
+bash scrollmessage.sh "Welcome to YouMinds Sportticker -> http://$HN or http://$IPA" 1 999999
 
 while
 {
@@ -27,7 +27,7 @@ while
 
 	declare -a LEAGUETEXTARRAY
 
-
+	LEAGUETEXTARRAY=()
 
 	for n in ./conf/*.cfg
 	do
@@ -55,6 +55,8 @@ while
 			echo $LEAGUETEXT
 
 			LEAGUETEXTARRAY+=("$LEAGUETEXT")
+			LEAGUETEXTARRAY+=("$COLOR")
+			LEAGUETEXTARRAY+=("$SPEED")
 
 		fi
 	done
@@ -76,16 +78,26 @@ while
 
 
 	echo "Show Ticker";date
+	echo "Array Size="${#LEAGUETEXTARRAY[@]}
 
 	# Scroll Ticker several times
 
 	for ((chrono=0; chrono < 2; chrono++))
 	do
-	        for TEXT in "${LEAGUETEXTARRAY[@]}"
+	        for ((i=0;i < ${#LEAGUETEXTARRAY[@]};i++))
         	do
-			echo $TEXT
+			TEXT=${LEAGUETEXTARRAY[i]}
+			((i++))
+			COLOR=${LEAGUETEXTARRAY[i]}
+			((i++))
+			SPEED=${LEAGUETEXTARRAY[i]}
 
-			bash splitscrollmessage.sh "$TEXT" AA0000
+
+			echo $TEXT
+			echo $COLOR
+			echo $SPEED
+
+			bash splitscrollmessage.sh "$TEXT" $COLOR
         	done
 
 
