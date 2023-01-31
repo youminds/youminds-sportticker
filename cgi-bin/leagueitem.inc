@@ -10,7 +10,7 @@
 
                 <div class="country">
                     {country}
-                    <img valign="middle" width="32" src="https://www.football-data.org/assets/{countrycode}.svg" />
+                    <img valign="middle" width="32" src="https://crests.football-data.org/{countrycode}.svg" />
                 </div>
             </div>
              <div class="ui">

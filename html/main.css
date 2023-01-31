@@ -16,7 +16,6 @@ a
 }
 
 body {
-background-image: url('ticker.png');
 }
 
 div.centerblock
@@ -97,12 +96,13 @@ div.leagueitem .label {
 float: right;
 display: block;
 height: 30pt;
+width:290pt;
+text-align:right;
 }
 
 div.leagueitem .title {
 font-size:28pt;
 color:#996666;
-float:right;
 height:50pt;
 display:block;
 }

@@ -17,6 +17,13 @@ const std::string QUERY_PARAM_SET_SPEED = "setspeed";
 const std::string QUERY_PARAM_SET_COLOR = "setcolor";
 const std::string QUERY_PARAM_SET_MODE = "setmode";
 
+const std::string MODE_TODAY_ONLY = "todayonly";
+const std::string MODE_TODAY_AND_STANDINGS = "todayandstandings";
+const std::string MODE_GAMEDAY_ONLY = "gamedayonly";
+const std::string MODE_GAMEDAY_AND_STANDINGS = "gamedayandstandings";
+
+
+std::string currentpage = "";
 
 std::vector<std::string> split (const std::string &s, char delim) {
     std::vector<std::string> result;
@@ -30,10 +37,6 @@ std::vector<std::string> split (const std::string &s, char delim) {
     return result;
 }
 
-
-const std::string MODE_FULL = "full";
-const std::string MODE_GAMEDAY_ONLY = "gamedayonly";
-const std::string MODE_GAMEDAY_AND_STANDINGS = "gamedayandstandings";
 
 
 
@@ -127,13 +130,14 @@ std::string LeagueInfo::ExpandTemplateLine(std::string line)
 	line = std::regex_replace(line,std::regex("\\{active\\}"), GetLeagueConf()->Active ? "on" : "off");
 
 
-	// Actions and Links
+	// Links
                 line = std::regex_replace(line,std::regex("\\{detailslink\\}"),"?" + QUERY_PARAM_LEAGUE_DETAILS_PAGE + "&" + QUERY_PARAM_ID + "=" + Id);
-                line = std::regex_replace(line,std::regex("\\{onofflink\\}"),"?" + QUERY_PARAM_LEAGUE_DETAILS_PAGE + "&" + QUERY_PARAM_ID + "=" + Id + "&" + QUERY_PARAM_ACTION + "=" + QUERY_PARAM_ACTION_TOGGLE_ONOFF);
 
-                line = std::regex_replace(line,std::regex("\\{setspeed\\}"),"?" + QUERY_PARAM_LEAGUE_DETAILS_PAGE + "&" + QUERY_PARAM_ID + "=" + Id + "&" + QUERY_PARAM_SET_SPEED + "=");
-                line = std::regex_replace(line,std::regex("\\{setcolor\\}"),"?" + QUERY_PARAM_LEAGUE_DETAILS_PAGE + "&" + QUERY_PARAM_ID + "=" + Id + "&" + QUERY_PARAM_SET_COLOR + "=");
-                line = std::regex_replace(line,std::regex("\\{setmode\\}"),"?" + QUERY_PARAM_LEAGUE_DETAILS_PAGE + "&" + QUERY_PARAM_ID + "=" + Id + "&" + QUERY_PARAM_SET_MODE + "=");
+	// Actions
+                line = std::regex_replace(line,std::regex("\\{onofflink\\}"),"?" + currentpage + "&" + QUERY_PARAM_ID + "=" + Id + "&" + QUERY_PARAM_ACTION + "=" + QUERY_PARAM_ACTION_TOGGLE_ONOFF);
+                line = std::regex_replace(line,std::regex("\\{setspeed\\}"),"?" + currentpage + "&" + QUERY_PARAM_ID + "=" + Id + "&" + QUERY_PARAM_SET_SPEED + "=");
+                line = std::regex_replace(line,std::regex("\\{setcolor\\}"),"?" + currentpage + "&" + QUERY_PARAM_ID + "=" + Id + "&" + QUERY_PARAM_SET_COLOR + "=");
+                line = std::regex_replace(line,std::regex("\\{setmode\\}"),"?" + currentpage + "&" + QUERY_PARAM_ID + "=" + Id + "&" + QUERY_PARAM_SET_MODE + "=");
 
 	return line;
 
@@ -187,6 +191,13 @@ LeagueConf::LeagueConf(std::string leagueID_p)
 
 		Name = values[4];
 	}
+	else
+	{
+		Color = "FF0000";
+		Speed = 35;
+		Mode = MODE_GAMEDAY_ONLY;
+		Name = "?";
+	}
 }
 
 void LeagueConf::Save()
@@ -233,11 +244,12 @@ int main()
 	// Read and parse query string
 	std::vector<std::string> vquery = split(squery,'&');
 
-	std::string templatefile = QUERY_PARAM_MAIN_PAGE + ".html";
+	currentpage = QUERY_PARAM_MAIN_PAGE;
 
 	if ( vquery.size() > 0 )
-		templatefile = vquery[0] + ".html";
+		currentpage = vquery[0];
 
+	std::string templatefile = currentpage + ".html";
 
 	std::map<std::string,std::string> querymap;
 
