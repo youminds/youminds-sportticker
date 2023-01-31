@@ -58,10 +58,17 @@ setup 1,10,3
 - Install JQ with "sudo apt-get install jq"
 - Go to the home directory with "cd $HOME"
 - Install the ticker with git clone https://github.com/youminds/youminds-sportticker.git
-- Test the ticker with bash tickerloop.sh
+- Obtain an ID from https://www.football-data.org in order to use the soccer API.
+- In the $HOME directory create a file "fdid" with the ID using "nano fdid"
+- Test the ticker 
+- Change into the youminds-sportticker directory 
+- Start the ticker with "bash tickerloop.sh"
 - You should see the ticker running on the display
-- You may now configure the ticker by editing the configfiles in the /conf subdir
+- Interrput the ticker with CTRL+C
 - Install the ticker service with "sudo bash tickerinstall.sh"
+- You may now configure the ticker by editing the configfiles in the /conf subdir
+- The syntax is: <LEAGUEID>;<COLOR>;<SPEED>;<NAME>;<MODE>
+- Where MODE is one of the following values: todayonly | todayorgameday | gamedayonly | gamedayorstandings
 - Or you may install the Web App for convenient configuration
 - Install lighttpd with "sudo apt-get install lighttpd"
 - Open a browser and type "http://sportticker" you should see lighttpd main page
@@ -72,5 +79,7 @@ setup 1,10,3
 - Enter bash build.sh
 - When the build finishes type "http://sportticker" again into a browser
 - You may now use the web application to configure the ticker
+- Changes will only take effect after the ticker has finished one round with all configured soccer data
+- HAVE FUN
   
 
