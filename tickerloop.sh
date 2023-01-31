@@ -25,6 +25,9 @@ while
 
 	LEAGUETEXTARRAY=()
 
+	declare -i TEXTLEN
+	TEXTLEN=0
+
 	for n in ./conf/*.cfg
 	do
 		#printf '%s\n' "$(basename ${n%.*})"
@@ -46,7 +49,9 @@ while
 
 		if [[ $ON == "on" ]] ; then
 
-			LEAGUETEXT=$(bash ticker.sh $LEAGUE "$NAME")
+			LEAGUETEXT=$(bash ticker.sh $LEAGUE "$NAME" $MODE)
+
+			TEXTLEN=$TEXTLEN+${#LEAGUETEXT}
 
 			if [[ $LEAGUETEXT != "" ]] ; then
 
@@ -60,7 +65,6 @@ while
 	done
 
 
-
 	if [[ ${#LEAGUETEXTARRAY[@]} == 0 ]] ; then
 
 		# Nothing to show
@@ -72,8 +76,29 @@ while
 
 	else
 
+
 		# Scroll Ticker several times
-		for ((chrono=0; chrono < 2; chrono++))
+		declare -i LOOPS
+		LOOPS=1
+
+		if [[ $TEXTLEN < 200 ]] ; then
+
+			((LOOPS++))
+
+		fi
+		if [[ $TEXTLEN < 100 ]] ; then
+
+			((LOOPS++))
+
+		fi
+		if [[ $TEXTLEN < 50 ]] ; then
+
+			((LOOPS++)
+			((LOOPS++))
+
+		fi
+
+		for ((chrono=0; chrono < $LOOPS; chrono++))
 		do
 	        	for ((i=0;i < ${#LEAGUETEXTARRAY[@]};i++))
         		do

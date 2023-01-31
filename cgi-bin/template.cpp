@@ -18,7 +18,7 @@ const std::string QUERY_PARAM_SET_COLOR = "setcolor";
 const std::string QUERY_PARAM_SET_MODE = "setmode";
 
 const std::string MODE_TODAY_ONLY = "todayonly";
-const std::string MODE_TODAY_AND_STANDINGS = "todayandstandings";
+const std::string MODE_TODAY_OR_GAMEDAY = "todayorgameday";
 const std::string MODE_GAMEDAY_ONLY = "gamedayonly";
 const std::string MODE_GAMEDAY_AND_STANDINGS = "gamedayandstandings";
 
