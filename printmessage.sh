@@ -1,8 +1,6 @@
 #!/bin/bash
 
 
-echo $1
-echo $2
 
 TXT=$(echo $1 | tr "'" . | tr "\"" !)
 

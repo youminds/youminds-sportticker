@@ -4,15 +4,13 @@ cd /home/pi/youminds-sportticker
 
 
 
-echo "Intro"
+echo "Start YouMinds Sportticker Loop"
 
 # Hostname for Webserver
 HN=$(hostname  -s)
 # IP Adress for Webserver
 IPA=$(hostname  -I | cut -f1 -d' ')
 
-echo $HN
-echo $IPA
 
 # Intro einmal scrollen
 bash scrollmessage.sh "Welcome to YouMinds Sportticker -> http://$HN or http://$IPA" 1 999999
@@ -20,8 +18,6 @@ bash scrollmessage.sh "Welcome to YouMinds Sportticker -> http://$HN or http://$
 while
 {
 	bash printmessage.sh "-->>--" 999999
-
-	echo "Receive Ticker data";date
 
 	#Iterate over the league configurations files
 
@@ -52,62 +48,50 @@ while
 
 			LEAGUETEXT=$(bash ticker.sh $LEAGUE "$NAME")
 
-			echo $LEAGUETEXT
+			if [[ $LEAGUETEXT != "" ]] ; then
 
-			LEAGUETEXTARRAY+=("$LEAGUETEXT")
-			LEAGUETEXTARRAY+=("$COLOR")
-			LEAGUETEXTARRAY+=("$SPEED")
+				LEAGUETEXTARRAY+=("$LEAGUETEXT")
+				LEAGUETEXTARRAY+=("$COLOR")
+				LEAGUETEXTARRAY+=("$SPEED")
+
+			fi
 
 		fi
 	done
 
 
-	#BLTXT=$(bash ticker.sh BL1 Bundesliga)
 
-	#CLTXT=$(bash ticker.sh CL "Champions League")
+	if [[ ${#LEAGUETEXTARRAY[@]} == 0 ]] ; then
 
-	#PLTXT=$(bash ticker.sh PL "Premier League")
+		# Nothing to show
+		bash scrollmessage.sh "No data available, select leagues. Will try again in one minute." 1 999999
 
-	#PDTXT=$(bash ticker.sh PD "La Liga")
+		bash printmessage.sh "..." 999999
 
-	#FLTXT=$(bash ticker.sh FL1 "Ligue 1")
+		sleep 60
 
-	#SATXT=$(bash ticker.sh SA "Serie A")
+	else
 
-
-
-
-	echo "Show Ticker";date
-	echo "Array Size="${#LEAGUETEXTARRAY[@]}
-
-	# Scroll Ticker several times
-
-	for ((chrono=0; chrono < 2; chrono++))
-	do
-	        for ((i=0;i < ${#LEAGUETEXTARRAY[@]};i++))
-        	do
-			TEXT=${LEAGUETEXTARRAY[i]}
-			((i++))
-			COLOR=${LEAGUETEXTARRAY[i]}
-			((i++))
-			SPEED=${LEAGUETEXTARRAY[i]}
+		# Scroll Ticker several times
+		for ((chrono=0; chrono < 2; chrono++))
+		do
+	        	for ((i=0;i < ${#LEAGUETEXTARRAY[@]};i++))
+        		do
+				TEXT=${LEAGUETEXTARRAY[i]}
+				((i++))
+				COLOR=${LEAGUETEXTARRAY[i]}
+				((i++))
+				SPEED=${LEAGUETEXTARRAY[i]}
 
 
-			echo $TEXT
-			echo $COLOR
-			echo $SPEED
 
-			bash splitscrollmessage.sh "$TEXT" $COLOR
-        	done
+				bash splitscrollmessage.sh "$TEXT" $COLOR $SPEED
+        		done
 
 
-		#bash splitscrollmessage.sh "$BLTXT" AA0000
-		#bash splitscrollmessage.sh "$CLTXT" 0033FF
-		#bash splitscrollmessage.sh "$PLTXT" CC3366
-		#bash splitscrollmessage.sh "$PDTXT" AAAA00
-		#bash splitscrollmessage.sh "$FLTXT" 00AA00
-		#bash splitscrollmessage.sh "$SATXT" 00AAAA
-	done
+		done
+
+	fi
 
 
 } || {

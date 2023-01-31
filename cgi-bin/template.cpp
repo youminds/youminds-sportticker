@@ -237,7 +237,10 @@ std::map<std::string, LeagueInfo*> LEAGUE_INFO_MAP = {
 
 int main()
 {
-	std::cout<<"Content-type: text/html"<<std::endl<<std::endl;
+	// Write Header
+	std::cout<<"Content-type: text/html"<<std::endl;
+	std::cout<<"Cache-Control: no-cache"<<std::endl;
+	std::cout<<std::endl;
 
 	std::string squery = getenv("QUERY_STRING");
 
@@ -263,16 +266,6 @@ int main()
 		}
 	}
 
-	// Expand template file
-	std::ifstream input( templatefile );
-
-	// Prepare replacement text block for league item's in list:league token
-	std::stringstream list_leages;
-
-	for (auto const& linfo : LEAGUE_INFO_MAP)
-	{
-		list_leages << linfo.second->ExpandTemplateFile("leagueitem.inc");
-	}
 
 
 	// Handle parameters and actions
@@ -281,7 +274,8 @@ int main()
 
 	LeagueInfo * queriedleagueinfo = NULL;
 
-	queriedleagueinfo = LEAGUE_INFO_MAP[id];
+	if ( id != "" )
+		queriedleagueinfo = LEAGUE_INFO_MAP[id];
 
 	// Action available ?
 	std::string  action = querymap[QUERY_PARAM_ACTION];
@@ -338,6 +332,17 @@ int main()
                         // Persist
                         conf->Save();
                 }
+	}
+
+	// Expand template file
+	std::ifstream input( templatefile );
+
+	// Prepare replacement text block for league item's in list:league token
+	std::stringstream list_leages;
+
+	for (auto const& linfo : LEAGUE_INFO_MAP)
+	{
+		list_leages << linfo.second->ExpandTemplateFile("leagueitem.inc");
 	}
 
 	// Expand all lines of template file
