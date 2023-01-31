@@ -4,198 +4,23 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>YouMinds Sportticker choose leagues</title>
-
-    <style>
-        html,
-        body {
-            margin: 0px;
-            padding: 0px;
-            height: 100%;
-            width: 100%;
-            font-size: 12pt;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-image: url('ticker.png');
-        }
-
-        a.button {
-            width: 200pt;
-            margin: auto;
-            display: block;
-        }
-
-            a.button div {
-                background-color: #990000;
-                color: white;
-                border-radius: 16pt;
-                padding: 16pt;
-                width: auto;
-                font-size: 20pt;
-                text-align: center;
-                border: 2pt solid #c00;
-            }
-
-        div.bottombar {
-            padding: 10pt;
-            position: absolute;
-            bottom: 0px;
-            text-align: center;
-            background: #cccc00;
-            width: 100%;
-            color: white;
-        }
-
-        div.topbar {
-            font-size: 16pt;
-            padding: 10pt;
-            background: #990000;
-            width: 100%;
-            color: white;
-        }
-
-        div.leagueitem
-        {
-            
-            display:block;
-            clear:both;
-            height:360px;
-        }
-
-        div.leagueitem div.logo {
-
-            float:left;
-            display:block;
-            margin-right:3pt;
-            margin-bottom:30pt;
-            clear:both;
-        }
-
-            div.leagueitem .label {
-                float: right;
-                display: block;
-                height: 30pt;
-            }
-
-        div.leagueitem .title {
-            font-size:28pt;
-            color:#996666;
-            float:right;
-            height:50pt;
-            display:block;
-        }
-
-            div.leagueitem .country {
-                font-size: 14pt;
-                vertical-align: central;
-
-
-                color:#999999;
-                
-            }
-
-            div.leagueitem .country img {
-                margin-left:5pt;
-                
-            }
-
-        div.activebtn {
-            float: left;
-
-        }
-
-            div.activebtn a {
-                width: 80pt;
-                margin: auto;
-                display: block;
-                float:left;
-            }
-
-
-        div.activebtnon a.on div {
-            color: white;
-            font-weight: bold;
-            background-color: #cc0000;
-        }
-
-        div.activebtnon a.off div {
-            color: #996666;
-            background-color: #990000;
-        }
-
-        div.activebtnoff a.off div {
-            color: white;
-            font-weight: bold;
-            background-color: #cc0000;
-        }
-
-        div.activebtnoff a.on div {
-            color: #996666;
-            background-color: #990000;
-        }
-
-
-      div.activebtn a div {
-           
-            
-            padding: 16pt;
-            width: auto;
-            font-size: 20pt;
-            text-align: center;
-        }
-                div.activebtn a.on div {
-                    border-radius: 16pt 0pt 0pt 16pt;
-                    margin-right:1pt;
-                }
-
-                div.activebtn a.off div {
-                    border-radius: 0pt 16pt 16pt 0pt;
-                }
-       div.leagueitem div.ui {
-            clear: both;
-            display: block;
-            
-            background:green;
-        }
-
-
-        a.details {
-            float: right;
-            width: 200pt;
-            margin: auto;
-            display: block;
-        }
-
-            a.details div {
-                background-color: #990000;
-                color: white;
-                border-radius: 16pt 0pt 0pt 16pt;
-                padding: 16pt;
-                width: auto;
-                font-size: 20pt;
-                text-align: center;
-                
-            }
-
-
-        
-    </style>
+    <link rel="stylesheet" href="main.css" />
+ 
 </head>
 <body>
 
-    <div class="topbar">YouMinds Sportticker</div>
+    <div class="topbar">YouMinds Sportticker <span>Leagues</span></div>
 
 
-    <div style="width:400pt;margin-left:auto;margin-right:auto;margin-top:100pt;">
+    <div class="centerblock">
 
- 
 
+        {list:league}
 
 
     </div>
 
-    {list:league}
+
 
 
 

@@ -1,0 +1,276 @@
+
+html,
+body {
+margin: 0px;
+padding: 0px;
+height: 100%;
+width: 100%;
+font-size: 12pt;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+a
+{
+    text-decoration:none;
+}
+
+body {
+background-image: url('ticker.png');
+}
+
+div.centerblock
+{
+    width:400pt;margin-left:auto;margin-right:auto;margin-top:100pt;
+}
+
+a.button {
+width: 200pt;
+margin: auto;
+display: block;
+}
+
+a.button div {
+background-color: #990000;
+color: white;
+border-radius: 16pt;
+padding: 16pt;
+width: auto;
+font-size: 20pt;
+text-align: center;
+border: 2pt solid #c00;
+}
+
+div.bottombar {
+padding: 10pt;
+position: fixed;
+bottom: 0px;
+text-align: center;
+background: #cccc00;
+width: 100%;
+color: white;
+}
+
+div.topbar {
+position: fixed;
+top: 0px;
+font-size: 18pt;
+padding: 14pt;
+background: #990000;
+width: 100%;
+color: white;
+}
+
+div.topbar span {
+font-weight:bold;
+}
+div.topbar a {
+float:right;
+margin-right:24pt;
+margin-top:-4pt;
+margin-bottom:-4pt;
+display:block;
+background:#cc0000;
+padding:5pt;
+color:#fff;
+text-align:center;
+border-radius:5pt;
+}
+div.leagueitem
+{
+            
+display:block;
+clear:both;
+height:300pt;
+}
+
+div.leagueitem div.logo {
+
+float:left;
+display:block;
+margin-right:3pt;
+margin-bottom:30pt;
+clear:both;
+}
+
+div.leagueitem .label {
+float: right;
+display: block;
+height: 30pt;
+}
+
+div.leagueitem .title {
+font-size:28pt;
+color:#996666;
+float:right;
+height:50pt;
+display:block;
+}
+
+div.leagueitem .country {
+font-size: 14pt;
+vertical-align: central;
+
+
+color:#999999;
+                
+}
+
+div.leagueitem .country img {
+margin-left:5pt;
+                
+}
+
+div.colorbtn,
+div.speedbtn,
+div.activebtn {
+float: left;
+
+}
+
+div.colorbtn a,
+div.modebtn a,
+div.speedbtn a,
+div.activebtn a {
+width: 100pt;
+
+margin: auto;
+display: block;
+float:left;
+}
+
+div.colorbtn div,
+div.modebtn div,
+div.activebtn div,
+div.speedbtn div {
+color: #996666;
+background-color: #990000;
+
+}
+
+
+div.color00AA00 a.c00AA00 div,
+div.colorAA0000 a.cAA0000 div,
+div.colorAAAA00 a.cAAAA00 div,
+div.color0000AA a.c0000AA div,
+div.color00AAAA a.c00AAAA div,
+div.colorAA00AA a.cAA00AA div,
+div.colorCCCCCC a.cCCCCCC div,
+div.color3333FF a.c3333FF div,
+div.color00FF99 a.c00FF99 div,
+div.colorFF0000 a.cFF0000 div,
+div.colorFF3300 a.cFF3300 div,
+div.color3366CC a.c3366CC div
+{
+    margin:5pt;
+    height:16pt;
+}
+
+div.modetodayonly a.mtodayonly div,
+div.modetodayandstandings a.mtodayandstandings div,
+div.modegamedayonly a.mgamedayonly div,
+div.modegamedayandstandings a.mgamedayandstandings div,
+
+div.activebtnoff a.off div,
+div.activebtnon a.on div,
+div.speed25 a.s25 div,
+div.speed35 a.s35 div,
+div.speed45 a.s45 div,
+div.speed55 a.s55 div {
+color: white;
+font-weight: bold;
+background-color: #cc0000;
+}
+
+
+
+
+div.colorbtn a div,
+div.modebtn a div,
+div.speedbtn a div,
+div.activebtn a div {
+padding: 16pt;
+width: auto;
+font-size: 20pt;
+text-align: center;
+}
+
+
+
+div.colorbtn a.c0000AA div
+{
+    border-radius: 0pt 16pt 0pt 0pt;
+}
+
+
+div.colorbtn a.c00FF99 div
+{
+    border-radius: 0pt 0pt 0pt 16pt;
+}
+
+
+div.colorbtn a.c3366CC div
+{
+    border-radius: 0pt 0pt 16pt 0pt;
+}
+
+div.colorbtn a.c00AA00 div
+{
+    border-radius: 16pt 0pt 0pt 0pt;
+}
+
+
+div.modebtn a.mtodayonly div,
+div.speedbtn a.s25 div,
+div.activebtn a.on div {
+border-radius: 16pt 0pt 0pt 16pt;
+margin-right:1pt;
+}
+
+div.colorbtn a div
+{
+    margin: 1pt;
+}
+div.modebtn a.mtodayandstandings div,
+div.modebtn a.mgamedayonly div,
+div.speedbtn a.s35 div,
+div.speedbtn a.s45 div {
+margin-right:1pt;
+}
+
+div.modebtn a.mgamedayandstandings div,
+div.speedbtn a.s55 div,
+div.activebtn a.off div {
+border-radius: 0pt 16pt 16pt 0pt;
+}
+
+div.leagueitem div.ui {
+clear: both;
+display: block;
+            
+height:100pt;
+}
+
+
+
+a.details {
+float: right;
+width: 150pt;
+margin: auto;
+display: block;
+}
+
+a.details div {
+background-color: #990000;
+color: white;
+border-radius: 16pt 0pt 0pt 16pt;
+padding: 16pt;
+width: auto;
+font-size: 20pt;
+text-align: center;
+                
+}
+
+a.back div {
+border-radius: 0pt 16pt 16pt 0pt;
+}

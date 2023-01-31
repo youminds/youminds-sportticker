@@ -1,55 +1,202 @@
 
-<b>
-Hi Moritz Hier sind die Details.
-</b>
-
-<br>
-
-<a href="{homelink}">HOME</a>
 
 
-<br>
-Speed={speed}
-<br>
-Color={color}
-<br>
-Mode={mode}
-<br>
-Active={active}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>YouMinds Sportticker Details</title>
 
-<br>
+    <link rel="stylesheet" href="main.css" />
 
-<br>
-<a href="{setspeed}50">Set speed</a>
-<br>
-<a href="{setcolor}A0A0A0">Set color</a>
-<br>
-<a href="{setmode}gamedayonly">Set mode</a>
+</head>
+<body>
 
-<br>
-<br>
-
-<a href="{onofflink}">ON/OFF</a>
+    <div class="topbar">YouMinds Sportticker <span>Details</span>  <a href="{homelink}">Back to leagues</a></div>
 
 
-<br>
-<br>
-
-{name}
-<br>
-{country}
-<br>
-{league}
-<br>
+    <div class="centerblock">
 
 
+        <div class="leagueitem">
 
 
-<img width="100" src="https://www.football-data.org/assets/{logo}.png"/>
+            <div class="logo">
+                <img width="100" src="https://www.football-data.org/assets/{logo}.png" />
+            </div>
+
+            <div class="label">
+                <div class="title">{name}</div>
+
+                <div class="country">
+                    {country}
+                    <img valign="middle" width="32" src="https://www.football-data.org/assets/{countrycode}.svg" />
+                </div>
+            </div>
+            <div class="ui">
+                <div class="activebtn activebtn{active}">
+                    <a class="on" href="{onofflink}">
+                        <div>
+                            <span>ON</span>
+                        </div>
+                    </a>
+                    <a class="off" href="{onofflink}">
+                        <div>
+                            <span>OFF</span>
+                        </div>
+                    </a>
+                </div>
+                <a class="details back" href="{homelink}">
+                    <div>
+                        <span>Done</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="ui">
+                <div class="speedbtn speed{speed}">
+                    <a class="s25" href="{setspeed}25">
+                        <div>
+                            <span>1</span>
+                        </div>
+                    </a>
+                    <a class="s35" href="{setspeed}35">
+                        <div>
+                            <span>2</span>
+                        </div>
+                    </a>
+                    <a class="s45" href="{setspeed}45">
+                        <div>
+                            <span>3</span>
+                        </div>
+                    </a>
+                    <a class="s55" href="{setspeed}55">
+                        <div>
+                            <span>4</span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="ui">
+                <div class="modebtn mode{mode}">
+                    <a class="mtodayonly" href="{setmode}todayonly">
+                        <div>
+                            <span>T</span>
+                        </div>
+                    </a>
+                    <a class="mtodayandstandings" href="{setmode}todayandstandings">
+                        <div>
+                            <span>T+S</span>
+                        </div>
+                    </a>
+                    <a class="mgamedayonly" href="{setmode}gamedayonly">
+                        <div>
+                            <span>G</span>
+                        </div>
+                    </a>
+                    <a class="mgamedayandstandings" href="{setmode}gamedayandstandings">
+                        <div>
+                            <span>G+S</span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="ui">
+                <div style="height:300pt;" class="colorbtn color{color}">
+                    <a class="c00AA00" href="{setcolor}00AA00">
+                        <div style="background: #00AA00; ">
+                            <span>&nbsp;</span>
+                        </div>
+                    </a>
+                    <a class="cAA0000" href="{setcolor}AA0000">
+                        <div style="background: #AA0000;">
+                            <span>&nbsp;</span>
+                        </div>
+                    </a>
+                    <a class="cAAAA00" href="{setcolor}AAAA00">
+                        <div style="background: #AAAA00;">
+                            <span>&nbsp;</span>
+                        </div>
+                    </a>
+                    <a class="c0000AA" href="{setcolor}0000AA">
+                        <div style="background: #0000AA;">
+                            <span>&nbsp;</span>
+                        </div>
+                    </a>
 
 
 
-<img width="100" src="https://crests.football-data.org/{countrycode}.svg"/>
+                    <a class="c00AAAA" href="{setcolor}00AAAA">
+                        <div style="background: #00AAAA;">
+                            <span>&nbsp;</span>
+                        </div>
+                    </a>
+                    <a class="cAA00AA" href="{setcolor}AA00AA">
+                        <div style="background: #AA00AA;">
+                            <span>&nbsp;</span>
+                        </div>
+                    </a>
+                    <a class="cCCCCCC" href="{setcolor}CCCCCC">
+                        <div style="background: #DDD; ">
+                            <span>&nbsp;</span>
+                        </div>
+                    </a>
+                    <a class="c3333FF" href="{setcolor}3333FF">
+                        <div style="background: #3333FF;">
+                            <span>&nbsp;</span>
+                        </div>
+                    </a>
+
+
+
+
+                    <a class="c00FF99" href="{setcolor}00FF99">
+                        <div style="background: #00FF99;">
+                            <span>&nbsp;</span>
+                        </div>
+                    </a>
+                    <a class="cFF0000" href="{setcolor}FF0000">
+                        <div style="background: #FF0000; ">
+                            <span>&nbsp;</span>
+                        </div>
+                    </a>
+                    <a class="cFF3300" href="{setcolor}FF3300">
+                        <div style="background: #FF6600;">
+                            <span>&nbsp;</span>
+                        </div>
+                    </a>
+                    <a class="c3366CC" href="{setcolor}3366CC">
+                        <div style="background: #3366CC;">
+                            <span>&nbsp;</span>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+   
+
+    <div class="bottombar">Copyright 2023 by Bernd Seeberger<br />for my son Moritz</div>
+
+
+
+
+
+</body>
+</html>
 
 
 
