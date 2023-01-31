@@ -1,23 +1,35 @@
-Hi Moritz
-<br>
-<br>
-
-{name}
-<br>
-{country}
-<br>
-{league}
-<br>
+       <div class="leagueitem">
 
 
+            <div class="logo">
+                <img width="100" src="https://www.football-data.org/assets/{logo}.png" />
+            </div>
 
-<a href="{detailslink}">
+            <div class="label">
+                <div class="title">{name}</div>
 
-<img width="100" src="https://www.football-data.org/assets/{logo}.png"/>
-
-</a>
-
-
-<img width="100" src="https://crests.football-data.org/{countrycode}.svg"/>
-
-
+                <div class="country">
+                    {country}
+                    <img valign="middle" width="32" src="https://www.football-data.org/assets/{countrycode}.svg" />
+                </div>
+            </div>
+             <div class="ui">
+                 <div class="activebtn activebtn{active}">
+                     <a class="on" href="{onofflink}">
+                         <div>
+                             <span>ON</span>
+                         </div>
+                     </a>
+                     <a class="off" href="{onofflink}">
+                         <div>
+                             <span>OFF</span>
+                         </div>
+                     </a>
+                 </div>
+                <a class="details" href="{detailslink}">
+                    <div>
+                        <span>Details</span>
+                    </div>
+                </a>
+            </div>
+        </div>
