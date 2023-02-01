@@ -35,10 +35,10 @@ Todo..
 - Activate SSH
 - Expand the filesystem
 - Set the hostname to your choice or use "sportticker"
-- Enter sudo reboot
+- Enter "sudo reboot"
 - Check your router if Raspberry connected the WLAN
 - Open a terminal window on windows or iOS
-- Enter "ssh pi@sportticker" or "ssh pi@<THE WLAN IP>"
+- Enter "ssh pi@sportticker" or "ssh pi@[THE WLAN IP]"
 - Enter your passwort
 - You may now switch off the Raspberry, disconnect the keyboard and the monitor, leave the WLAN stick and switch the raspberry on again.
 - Log in again via terminal window and SSH
@@ -50,7 +50,7 @@ Todo..
 - Go to the rpi-ws2812-server directory
 - Start the display driver with sudo ./ws2812svr starten
 - Enter 
-setup 1,10,3 
+- setup 1,10,3 
 ⁃	init 
 ⁃	fill 1,006600 
 ⁃	render
