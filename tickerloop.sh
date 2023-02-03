@@ -81,17 +81,17 @@ while
 		declare -i LOOPS
 		LOOPS=1
 
-		if [[ $TEXTLEN < 200 ]] ; then
+		if [[ "$TEXTLEN" -lt 200 ]] ; then
 
 			((LOOPS++))
 
 		fi
-		if [[ $TEXTLEN < 100 ]] ; then
+		if [[ "$TEXTLEN" -lt 100 ]] ; then
 
 			((LOOPS++))
 
 		fi
-		if [[ $TEXTLEN < 50 ]] ; then
+		if [[ "$TEXTLEN" -lt 50 ]] ; then
 
 			((LOOPS++))
 			((LOOPS++))
