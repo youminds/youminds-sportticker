@@ -1,5 +1,9 @@
-# youminds-sportticker
+# Soccer  Ticker for Matrix LED Displays with Controlling APP
 
+
+
+
+![The Sporticker in action with Apps controlling the leagues.](sportticker.jpeg)
 
 This ticker app retrieves scoccer data from https://www.football-data.org and displays scores and standings on a matrix LED display.
 
