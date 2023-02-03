@@ -23,7 +23,23 @@ Please make shure to read and accept the licence conditions of each third party 
 
 ## Hardware setup
 
-Todo..
+### Parts
+These are the parts that comprise the soccer ticker. Basically a Raspberry Pi with power adapter a WLAN Module and of course the Matrix display. The power adapter should have 2 Amps to run the display proberly.
+![The Sporticker Parts.](parts.png)
+
+### Display
+I built a housing with acrylic panels.
+![The Sporticker LED Display.](matrix.png)
+
+### Wireing
+The matrix display comes with 3 wires. 
+```
+Ground  (WHITE)
++5V     (RED)
+Data In (GREEN)
+```
+The data in goes to **PIN 18** on the Raspberry.
+![The Sporticker Wireing.](wire.png)
 
 ## Software installation
 
@@ -66,7 +82,7 @@ Todo..
 - **Install JQ**
   - Enter ```sudo apt-get install jq```
 - **Install the ticker service**
-  - Go to the home directory with "cd $HOME"
+  - Go to the home directory with ```cd $HOME```
   - Install the ticker with ```git clone https://github.com/youminds/youminds-sportticker.git```
   - Obtain an ID from https://www.football-data.org in order to use the soccer API.
   - In the $HOME directory create a file "fdid" with the ID using ```nano fdid```
@@ -83,7 +99,7 @@ Todo..
 - **Or you may install the Web App for convenient configuration**
   - Install lighttpd with ```sudo apt-get install lighttpd```
     - Open a browser and type "http://sportticker" you should see lighttpd main page
-    - Enable cgi with "sudo lighty-enable-mod cgi"
+    - Enable cgi with ```sudo lighty-enable-mod cgi```
     - Restart lighttpd with ```sudo service lighttpd force-reload```
   - Install the web app
     - Go to the directory /cgi-bin
