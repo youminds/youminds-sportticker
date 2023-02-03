@@ -93,7 +93,7 @@ while
 		fi
 		if [[ $TEXTLEN < 50 ]] ; then
 
-			((LOOPS++)
+			((LOOPS++))
 			((LOOPS++))
 
 		fi
