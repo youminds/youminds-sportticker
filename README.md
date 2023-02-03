@@ -1,6 +1,6 @@
 # Soccer  Ticker for Matrix LED Displays with Controlling APP
 
-
+A birthday present for my son Moritz.:grinning:
 
 
 ![The Sporticker in action with Apps controlling the leagues.](sportticker.jpeg)
