@@ -23,7 +23,7 @@ Todo..
 
 ## Software installation
 
-- Install the Pi OS
+- **Install the Pi OS**
   - Create a boot SD-Card with Raspberry Pi OS Lite 32 Bit from https://www.raspberrypi.com/software/
   - Connect a monitor, a dual USB hub and plug the keyboard and the edimax WLAN stick to the Raspberry Pi
   - Insert the SD-Card
@@ -31,60 +31,62 @@ Todo..
   - Wait for the end of the setup process of the Raspberry Pi OS Lite 32
   - When asked enter exactly "pi" as user
   - When asked enter a passwort of your choice
-  - Enter "sudo raspi-config"
+  - Enter ``` sudo raspi-config ```
   - Activate WLAN
   - Activate SSH
   - Expand the filesystem
   - Set the hostname to your choice or use "sportticker"
-  - Enter "sudo reboot"
-- Access the Pi with SSH
+  - Enter ```sudo reboot```
+- **Access the Pi with SSH**
   - Check your router if Raspberry connected the WLAN
   - Open a terminal window on windows or iOS
-  - Enter "ssh pi@sportticker" or "ssh pi@[THE WLAN IP]"
+  - Enter ```ssh pi@sportticker``` or ```ssh pi@[THE WLAN IP]"```
   - Enter your passwort
   - You may now switch off the Raspberry, disconnect the keyboard and the monitor, leave the WLAN stick and switch the raspberry on again.
-- Install the rpi-ws2812-server
+- **Install the rpi-ws2812-server**
   - Log in again via terminal window and SSH
   - Go to https://github.com/tom-2015/rpi-ws2812-server and follow the instructions
   - Do not install the service
   - Make shure the LED Matrix data in is connected with pin 18
   - Test the display
   - Go to the rpi-ws2812-server directory
-  - Start the display driver with sudo ./ws2812svr
+  - Start the display driver with ```sudo ./ws2812svr```
   - Enter
-    - setup 1,10,3 
-    - init 
-    - fill 1,006600 
-    - render
+    ```
+    setup 1,10,3 
+    init 
+    fill 1,006600 
+    render
+    ```
   - You should the the first 10 LEDs lighting
-- Install JQ
-  - Enter "sudo apt-get install jq"
-- Install the ticker service
+- **Install JQ**
+  - Enter ```sudo apt-get install jq```
+- **Install the ticker service**
   - Go to the home directory with "cd $HOME"
-  - Install the ticker with git clone https://github.com/youminds/youminds-sportticker.git
+  - Install the ticker with ```git clone https://github.com/youminds/youminds-sportticker.git```
   - Obtain an ID from https://www.football-data.org in order to use the soccer API.
-  - In the $HOME directory create a file "fdid" with the ID using "nano fdid"
+  - In the $HOME directory create a file "fdid" with the ID using ```nano fdid```
   - Test the ticker 
   - Change into the youminds-sportticker directory 
-  - Start the ticker with "bash tickerloop.sh"
+  - Start the ticker with ```bash tickerloop.sh```
   - You should see the ticker running on the display
   - Interrput the ticker with CTRL+C
-  - Install the ticker service with "sudo bash tickerinstall.sh"
-- Configure the ticker service
+  - Install the ticker service with ```sudo bash tickerinstall.sh```
+- **Configure the ticker service**
   - You may now configure the ticker by editing the configfiles in the /conf subdir
-  - The syntax is: <LEAGUEID>;<COLOR>;<SPEED>;<NAME>;<MODE>
+  - The syntax is: [LEAGUEID];[COLOR];[SPEED];[NAME];[MODE]
   - Where MODE is one of the following values: todayonly | todayorgameday | gamedayonly | gamedayorstandings
-- Or you may install the Web App for convenient configuration
-  - Install lighttpd with "sudo apt-get install lighttpd"
+- **Or you may install the Web App for convenient configuration**
+  - Install lighttpd with ```sudo apt-get install lighttpd```
     - Open a browser and type "http://sportticker" you should see lighttpd main page
     - Enable cgi with "sudo lighty-enable-mod cgi"
-    - Restart lighttpd with "sudo service lighttpd force-reload"
+    - Restart lighttpd with ```sudo service lighttpd force-reload```
   - Install the web app
     - Go to the directory /cgi-bin
-    - Enter bash build.sh
+    - Enter ```bash build.sh```
     - When the build finishes type "http://sportticker" again into a browser
     - You may now use the web application to configure the ticker
     - Changes will only take effect after the ticker has finished one round with all configured soccer data
-- HAVE FUN
+- **HAVE FUN**
   
 
