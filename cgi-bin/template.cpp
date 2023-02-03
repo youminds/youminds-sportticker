@@ -221,7 +221,7 @@ void LeagueConf::Save()
 }
 
 std::map<std::string, LeagueInfo*> LEAGUE_INFO_MAP = {
-{"CL", new LeagueInfo("CL","Chamnpions League", "logo_cl", "Europa", "EUR")},
+{"CL", new LeagueInfo("CL","Champions League", "logo_cl", "Europa", "EUR")},
 {"PPL", new LeagueInfo("PPL", "Primeira Liga", "portugueseprimeradivision", "Portugal", "765")},
 {"PL", new LeagueInfo("PL", "Premier League", "logo_premier_league", "England", "770")},
 {"DED", new LeagueInfo("DED", "Eredivisie", "logo_eredivisie", "Netherlands", "8601")},
