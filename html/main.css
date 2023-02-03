@@ -176,7 +176,7 @@ div.activebtnon a.on div,
 div.speed25 a.s25 div,
 div.speed35 a.s35 div,
 div.speed45 a.s45 div,
-div.speed55 a.s55 div {
+div.speed15 a.s15 div {
 color: white;
 font-weight: bold;
 background-color: #cc0000;
@@ -221,7 +221,7 @@ div.colorbtn a.c00AA00 div
 
 
 div.modebtn a.mtodayonly div,
-div.speedbtn a.s25 div,
+div.speedbtn a.s45 div,
 div.activebtn a.on div {
 border-radius: 16pt 0pt 0pt 16pt;
 margin-right:1pt;
@@ -239,7 +239,7 @@ margin-right:1pt;
 }
 
 div.modebtn a.mgamedayandstandings div,
-div.speedbtn a.s55 div,
+div.speedbtn a.s15 div,
 div.activebtn a.off div {
 border-radius: 0pt 16pt 16pt 0pt;
 }
