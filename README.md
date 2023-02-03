@@ -27,9 +27,9 @@ Once you installed the application on your Raspberry Pi you can open a WebAPP to
 The WebAPP offers several options as you can see on the screenshot.
 
 
-**Enable** lets you swith a leage on or off
+**Enable** lets you switch a league on or off
 
-**Speed** lets you select on of 4 different ticker speeds
+**Speed** lets you select one of 4 different ticker speeds
 
 **Mode** lets you select 4 different modes which are:
 - ?:? Games of the day only
