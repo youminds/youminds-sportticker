@@ -35,7 +35,9 @@ while
 		CFG=$(cat ${n})
 
 		# Parse Parameter from configuration file 
-		PARAS=(${CFG//;/ })
+                #PARAS=(${CFG//;/ })
+                # Mind spaces
+                IFS=';'; PARAS=($CFG); unset IFS;
 
 		# Read parameters
 		LEAGUE=$(basename ${n%.*})
