@@ -1,11 +1,11 @@
 # Soccer  Ticker for Matrix LED Displays with Controlling APP
 
-A birthday present for my son Moritz.:grinning:
+A Christmas present for my son Moritz.:grinning:
 
 
 ![The Sporticker in action with Apps controlling the leagues.](sportticker.jpeg)
 
-This ticker app retrieves scoccer data from https://www.football-data.org and displays scores and standings on a matrix LED display.
+This ticker app retrieves soccer data from https://www.football-data.org and displays scores and standings on a matrix LED display.
 
 It is based upon a Raspberry Pi. I used a Revision 2 Model B with only one USB and a Edimax WLAN module. You may as well use other Raspberry Pi hardware.
 
@@ -47,7 +47,7 @@ The WebAPP offers several options as you can see on the screenshot.
 ## Hardware setup
 
 ### Parts
-These are the parts that comprise the soccer ticker. Basically a Raspberry Pi with power adapter a WLAN Module and of course the Matrix display. The power adapter should have 2 Amps to run the display proberly.
+These are the parts that comprise the soccer ticker. Basically a Raspberry Pi with power adapter a WLAN Module and of course the Matrix display. The power adapter should have 2 Amps to run the display properly.
 ![The Sporticker Parts.](parts.png)
 
 ### Display
@@ -89,7 +89,7 @@ The data in goes to **PIN 18** on the Raspberry.
 - **Install the rpi-ws2812-server**
   - Log in again via terminal window and SSH
   - Go to https://github.com/tom-2015/rpi-ws2812-server and follow the instructions
-  - Do not install the service
+  - Do NOT install the service
   - Make shure the LED Matrix data in is connected with pin 18
   - Test the display
   - Go to the rpi-ws2812-server directory
